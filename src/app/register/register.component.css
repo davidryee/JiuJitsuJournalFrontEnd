@@ -1,0 +1,28 @@
+.profile-img-card{
+    max-width: 25%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.form-group{
+    max-width: 33%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.btn{
+    max-width: 25%;
+    float: right;
+}
+
+.card{
+    border: none;
+}
