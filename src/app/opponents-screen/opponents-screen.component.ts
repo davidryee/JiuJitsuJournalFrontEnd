@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Opponent } from './opponent.model';
+import { OpponentService } from './opponent.service';
 
 @Component({
   selector: 'app-opponents-screen',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpponentsScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private opponentService: OpponentService) { }
 
   ngOnInit(): void {
+    this.getOpponents();
+  }
+
+  private async getOpponents() : Promise<void> {
+    await this.opponentService.retrieveOpponents().then(res => {
+      console.log("opponents: ", res);
+    });
   }
 
 }
