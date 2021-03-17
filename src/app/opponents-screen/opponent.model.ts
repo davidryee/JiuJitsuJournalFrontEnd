@@ -1,9 +1,9 @@
 export interface Opponent {
-    Id: number;
-    Name: string;
-    BeltRank: BeltRankEnum;
-    HeightInInches: number;
-    WeightInLbs: number;    
+    id: number;
+    name: string;
+    beltRank: BeltRankEnum;
+    heightInInches: number;
+    weightInLbs: number;    
 }
 
 export enum BeltRankEnum {

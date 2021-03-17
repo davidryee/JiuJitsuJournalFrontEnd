@@ -9,6 +9,7 @@ import { OpponentService } from './opponent.service';
 })
 export class OpponentsScreenComponent implements OnInit {
 
+  public opponents: Opponent[] = [];
   constructor(private opponentService: OpponentService) { }
 
   ngOnInit(): void {
@@ -16,9 +17,10 @@ export class OpponentsScreenComponent implements OnInit {
   }
 
   private async getOpponents() : Promise<void> {
-    await this.opponentService.retrieveOpponents().then(res => {
-      console.log("opponents: ", res);
-    });
+    await this.opponentService.retrieveOpponents().subscribe((results) => {
+      this.opponents = results
+      console.log(this.opponents[0].name)
+    })
   }
 
 }

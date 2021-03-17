@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { EnvironmentService } from "../environment/environment.service";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Opponent } from "./opponent.model";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -14,9 +15,7 @@ export class OpponentService {
     {
     }
 
-    public async retrieveOpponents(): Promise<Opponent[]> {
-        const result = this.httpClient.get<Opponent[]>(this.env.getUrl() + "opponents").toPromise()
-            .catch();
-        return result;
+    public retrieveOpponents(): Observable<Opponent[]> {
+        return this.httpClient.get<Opponent[]>(this.env.getUrl() + "opponents");
     }
 }
