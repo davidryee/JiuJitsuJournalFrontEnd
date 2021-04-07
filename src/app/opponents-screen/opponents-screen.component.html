@@ -2,6 +2,24 @@
     <app-side-nav></app-side-nav>
     <div class="main">
         <h2>Opponents</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Belt Rank</th>
+                  <th>Height in Inches</th>
+                  <th>Weight in Pounds</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let opponent of opponents">
+                <td>{{ opponent.name }}</td>
+                <td>{{ opponent.beltRank }}</td>
+                <td>{{ opponent.heightInInches }}</td>
+                <td>{{ opponent.weightInLbs }}</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 </body>>
 
