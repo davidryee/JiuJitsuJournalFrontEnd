@@ -4,10 +4,10 @@ import { OpponentService } from './opponent.service';
 
 @Component({
   selector: 'app-opponents-screen',
-  templateUrl: './opponents-screen.component.html',
-  styleUrls: ['./opponents-screen.component.css']
+  templateUrl: './opponents-list.component.html',
+  styleUrls: ['./opponents-list.component.css']
 })
-export class OpponentsScreenComponent implements OnInit {
+export class OpponentsListComponent implements OnInit {
 
   public opponents: Opponent[] = [];
   constructor(private opponentService: OpponentService) { }

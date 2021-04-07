@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpponentsScreenComponent } from './opponents-screen.component';
+import { OpponentsListComponent } from './opponents-list.component';
 
-describe('OpponentsScreenComponent', () => {
-  let component: OpponentsScreenComponent;
-  let fixture: ComponentFixture<OpponentsScreenComponent>;
+describe('OpponentsListComponent', () => {
+  let component: OpponentsListComponent;
+  let fixture: ComponentFixture<OpponentsListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OpponentsScreenComponent ]
+      declarations: [ OpponentsListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OpponentsScreenComponent);
+    fixture = TestBed.createComponent(OpponentsListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
