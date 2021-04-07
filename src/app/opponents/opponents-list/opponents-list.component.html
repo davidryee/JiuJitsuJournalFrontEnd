@@ -13,7 +13,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let opponent of opponents">
-                <td>{{ opponent.name }}</td>
+                <td><a routerLink="/opponents/{{opponent.id}}">{{ opponent.name }}</a></td>
                 <td>{{ opponent.beltRank }}</td>
                 <td>{{ opponent.heightInInches }}</td>
                 <td>{{ opponent.weightInLbs }}</td>
