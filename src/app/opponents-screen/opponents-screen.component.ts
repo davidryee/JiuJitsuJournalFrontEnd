@@ -19,7 +19,6 @@ export class OpponentsScreenComponent implements OnInit {
   private async getOpponents() : Promise<void> {
     await this.opponentService.retrieveOpponents().subscribe((results) => {
       this.opponents = results
-      console.log(this.opponents[0].name)
     })
   }
 
