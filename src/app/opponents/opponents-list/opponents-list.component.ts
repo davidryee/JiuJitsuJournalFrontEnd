@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Opponent } from './opponent.model';
-import { OpponentService } from './opponent.service';
+import { Opponent } from '../opponent.model';
+import { OpponentService } from '../opponent.service';
 
 @Component({
   selector: 'app-opponents-screen',

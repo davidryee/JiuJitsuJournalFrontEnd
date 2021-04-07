@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { OpponentsListComponent } from './opponents/opponents-list.component';
+import { OpponentsListComponent } from './opponents/opponents-list/opponents-list.component';
 import {HomeScreenComponent} from './home-screen/home-screen.component';
 import { MatchesScreenComponent } from './matches-screen/matches-screen.component';
 import { LoginComponent } from './login/login.component';
