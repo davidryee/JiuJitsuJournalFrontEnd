@@ -3,7 +3,7 @@ import { Opponent } from '../opponent.model';
 import { OpponentService } from '../opponent.service';
 
 @Component({
-  selector: 'app-opponents-screen',
+  selector: 'app-opponents-list',
   templateUrl: './opponents-list.component.html',
   styleUrls: ['./opponents-list.component.css']
 })

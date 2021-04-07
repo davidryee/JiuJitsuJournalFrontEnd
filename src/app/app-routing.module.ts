@@ -5,9 +5,11 @@ import {HomeScreenComponent} from './home-screen/home-screen.component';
 import { MatchesScreenComponent } from './matches-screen/matches-screen.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { OpponentDetailsComponent } from './opponents/opponent-details/opponent-details.component';
 
 const routes: Routes = [
   {path: 'opponents', component: OpponentsListComponent},
+  {path: 'opponents/:id', component: OpponentDetailsComponent},
   {path: 'matches', component: MatchesScreenComponent},
   {path: '', component: HomeScreenComponent},
   { path: 'login', component: LoginComponent },
