@@ -13,11 +13,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { OpponentDetailsComponent } from './opponents/opponent-details/opponent-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpponentsListComponent,
+    OpponentDetailsComponent,
     HomeScreenComponent,
     SideNavComponent,
     MatchesScreenComponent,

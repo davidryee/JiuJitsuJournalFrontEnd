@@ -1,0 +1,38 @@
+<body>
+    <app-side-nav></app-side-nav>
+    <div class="main">
+        <h2>Opponent</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    [(ngModel)]="opponent.name"
+                    name="name"
+                    />
+            </div>
+            <div class="form-group">
+                <label for="height">Height</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="height"
+                    [(ngModel)]="opponent.heightInInches"
+                    name="height"
+                    />
+            </div>
+            <div class="form-group">
+                <label for="weight">Height</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="weight"
+                    [(ngModel)]="opponent.weightInLbs"
+                    name="weight"
+                    />
+            </div>
+        </form>
+    </div>
+</body>
