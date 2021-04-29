@@ -24,7 +24,7 @@
                     />
             </div>
             <div class="form-group">
-                <label for="weight">Height</label>
+                <label for="weight">Weight</label>
                 <input
                     type="text"
                     class="form-control"
@@ -32,6 +32,13 @@
                     [(ngModel)]="opponent.weightInLbs"
                     name="weight"
                     />
+            </div>
+            <div class="form-group">
+                <label class="beltRankLabel" for="beltRank">Belt Rank</label>
+                <select>
+                    <option *ngFor="let beltRank of beltRanks" 
+                            [value]="beltRank"> {{beltRankToLabelMapping[beltRank]}} </option>
+                </select>
             </div>
         </form>
     </div>
