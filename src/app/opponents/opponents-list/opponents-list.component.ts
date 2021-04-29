@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Opponent } from './opponent.model';
-import { OpponentService } from './opponent.service';
+import { Opponent } from '../opponent.model';
+import { OpponentService } from '../opponent.service';
 
 @Component({
-  selector: 'app-opponents-screen',
-  templateUrl: './opponents-screen.component.html',
-  styleUrls: ['./opponents-screen.component.css']
+  selector: 'app-opponents-list',
+  templateUrl: './opponents-list.component.html',
+  styleUrls: ['./opponents-list.component.css']
 })
-export class OpponentsScreenComponent implements OnInit {
+export class OpponentsListComponent implements OnInit {
 
   public opponents: Opponent[] = [];
   constructor(private opponentService: OpponentService) { }

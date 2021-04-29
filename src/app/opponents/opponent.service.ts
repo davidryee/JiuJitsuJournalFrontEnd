@@ -16,6 +16,10 @@ export class OpponentService {
     }
 
     public retrieveOpponents(): Observable<Opponent[]> {
-        return this.httpClient.get<Opponent[]>(this.env.getUrl() + "opponents");
+        return this.httpClient.get<Opponent[]>(this.env.getUrl() + `opponents`);
+    }
+
+    public retrieveOpponentById(id): Observable<Opponent> {
+        return this.httpClient.get<Opponent>(this.env.getUrl() + `opponents/${id}`)
     }
 }

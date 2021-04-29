@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { OpponentsScreenComponent } from './opponents-screen/opponents-screen.component';
+import { OpponentsListComponent } from './opponents/opponents-list/opponents-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
@@ -17,7 +17,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    OpponentsScreenComponent,
+    OpponentsListComponent,
     HomeScreenComponent,
     SideNavComponent,
     MatchesScreenComponent,
