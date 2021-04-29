@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Opponent } from '../opponent.model';
+import { BeltRankEnum, BeltRankToLabelMapping, Opponent } from '../opponent.model';
 import { OpponentService } from '../opponent.service';
+import { from } from 'rxjs';
 
 @Component({
     selector: 'app-opponent-details',
@@ -10,8 +11,12 @@ import { OpponentService } from '../opponent.service';
 })
 export class OpponentDetailsComponent implements OnInit {
     public opponent: Opponent = null;
+    beltRankToLabelMapping = BeltRankToLabelMapping;
+    beltRanks = Object.values(BeltRankEnum).filter(f => !isNaN(Number(f)))
+
     constructor(private opponentService: OpponentService,
-        private route: ActivatedRoute) { }
+        private route: ActivatedRoute) { 
+        }
 
     ngOnInit(): void {
         this.getOpponentById(this.route.snapshot.paramMap.get('id'));
@@ -19,7 +24,6 @@ export class OpponentDetailsComponent implements OnInit {
 
     private async getOpponentById(id) : Promise<void>{
         await this.opponentService.retrieveOpponentById(id).subscribe((result) => {
-            console.log(result)
             this.opponent = result
         })
     }

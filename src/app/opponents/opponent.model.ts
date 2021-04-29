@@ -13,3 +13,11 @@ export enum BeltRankEnum {
     Brown = 3,
     Black = 4
 }
+
+export const BeltRankToLabelMapping : Record<BeltRankEnum, string>  = {
+    [BeltRankEnum.White]: "White",
+    [BeltRankEnum.Blue]: "Blue",
+    [BeltRankEnum.Purple]: "Purple",
+    [BeltRankEnum.Brown]: "Brown",
+    [BeltRankEnum.Black]: "Black",
+}
