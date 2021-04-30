@@ -22,4 +22,9 @@ export class OpponentService {
     public retrieveOpponentById(id): Observable<Opponent> {
         return this.httpClient.get<Opponent>(this.env.getUrl() + `opponents/${id}`)
     }
+
+    public updateOpponent(id, payload) : Observable<Opponent> {
+        console.log("in update oponent")
+        return this.httpClient.put<Opponent>(this.env.getUrl() + `opponents/${id}`, payload)
+    }
 }
