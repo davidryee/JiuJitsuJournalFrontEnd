@@ -35,10 +35,15 @@
             </div>
             <div class="form-group">
                 <label class="beltRankLabel" for="beltRank">Belt Rank</label>
-                <select>
+                <select [(ngModel)]="opponent.beltRank" name="beltRank">
                     <option *ngFor="let beltRank of beltRanks" 
                             [value]="beltRank"> {{beltRankToLabelMapping[beltRank]}} </option>
                 </select>
+            </div>
+
+            <div class="button-box">
+                <button (click)="updateOpponent()" type="button" class="btn btn-primary">Update Opponent</button>
+                <button type="button" class="btn btn-danger">Delete Opponent</button>
             </div>
         </form>
     </div>
