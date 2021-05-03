@@ -4,7 +4,7 @@ export interface ModalConfig {
     content?: string
     shouldClose?(): Promise<boolean> | boolean
     shouldDismiss?(): Promise<boolean> | boolean
-    onClose?(): Promise<boolean> | boolean
+    onClose?(): Promise<void> | void
     onDismiss?(): Promise<boolean> | boolean
     disableCloseButton?(): boolean
     disableDismissButton?(): boolean

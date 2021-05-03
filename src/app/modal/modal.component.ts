@@ -26,8 +26,10 @@ export class ModalComponent implements OnInit {
   
     async close(): Promise<void> {
       if (this.modalConfig.shouldClose === undefined || (await this.modalConfig.shouldClose())) {
-        const result = this.modalConfig.onClose === undefined || (await this.modalConfig.onClose())
-        this.modalRef.close(result)
+        if(this.modalConfig.onClose != undefined) {
+            await this.modalConfig.onClose()
+        }
+        this.modalRef.close(true)
       }
     }
   

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BeltRankEnum, BeltRankToLabelMapping, LabelToBeltRankMapping, Opponent } from '../opponent.model';
 import { OpponentService } from '../opponent.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
@@ -15,20 +15,21 @@ import { ModalConfig } from 'src/app/modal/modal.config';
 })
 export class OpponentDetailsComponent implements OnInit {
     public opponent: Opponent = null;
+    public disablePageFlag: boolean = null
     modalConfig: ModalConfig = {
         modalTitle: "Opponents"
     };
     beltRankToLabelMapping = BeltRankToLabelMapping;
     labelToBeltRankMapping = LabelToBeltRankMapping;
     beltRanks = Object.values(BeltRankEnum).filter(f => !isNaN(Number(f)))
+
     @ViewChild('modal') private modalComponent: ModalComponent
 
     closeResult: string;
 
 
     constructor(private opponentService: OpponentService,
-        private route: ActivatedRoute,
-        private modalService: NgbModal) { 
+        private route: ActivatedRoute) { 
         }
 
     ngOnInit(): void {
@@ -36,19 +37,7 @@ export class OpponentDetailsComponent implements OnInit {
         this.modalConfig.closeButtonLabel = "Close"
     }
 
-    private async getOpponentById(id) : Promise<void>{
-        await this.opponentService.retrieveOpponentById(id).subscribe((result) => {
-            this.opponent = result
-            this.opponent.beltRank = LabelToBeltRankMapping[result.beltRank]
-        })
-    }
-    async openModal() {
-        return await this.modalComponent.open()
-      }
-      
-
     public async updateOpponent() :Promise<void>{   
-        console.log("this.opponent is; ", this.opponent)
         var updatedOpponent = this.opponent
         await this.opponentService.updateOpponent(this.opponent.id, updatedOpponent).subscribe(data => 
             {
@@ -65,4 +54,31 @@ export class OpponentDetailsComponent implements OnInit {
                 this.openModal()
             })
     }
+
+    public async deleteOpponent() : Promise<void> {
+        await this.opponentService.deleteOpponent(this.opponent.id).subscribe(success => 
+            {
+                this.modalConfig.modalTitle = "Success!"
+                this.modalConfig.content = "Opponent Deleted!"
+                this.disablePageFlag = true
+                this.openModal()
+            },
+            error =>
+            {
+                this.modalConfig.modalTitle = "Error!"
+                this.modalConfig.content = "Opponent NOT Deleted!"
+                this.disablePageFlag = true
+                this.openModal()
+            })
+    }
+
+    private async getOpponentById(id) : Promise<void>{
+        await this.opponentService.retrieveOpponentById(id).subscribe((result) => {
+            this.opponent = result
+            this.opponent.beltRank = LabelToBeltRankMapping[result.beltRank]
+        })
+    }
+    async openModal() {
+        return await this.modalComponent.open()
+      }
 }
