@@ -23,6 +23,10 @@ export class OpponentService {
         return this.httpClient.get<Opponent>(this.env.getUrl() + `opponents/${id}`)
     }
 
+    public deleteOpponent(id) : Observable<void> {
+        return this.httpClient.delete<void>(this.env.getUrl() + `opponents/${id}`)
+    }
+
     public updateOpponent(id, payload) : Observable<Opponent> {
         console.log("in update oponent")
         return this.httpClient.put<Opponent>(this.env.getUrl() + `opponents/${id}`, payload)

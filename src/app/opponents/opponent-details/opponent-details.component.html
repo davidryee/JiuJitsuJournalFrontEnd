@@ -11,6 +11,7 @@
                     id="name"
                     [(ngModel)]="opponent.name"
                     name="name"
+                    [disabled]="disablePageFlag ? true : null"
                     />
             </div>
             <div class="form-group">
@@ -21,6 +22,7 @@
                     id="height"
                     [(ngModel)]="opponent.heightInInches"
                     name="height"
+                    [disabled]="disablePageFlag ? true : null"
                     />
             </div>
             <div class="form-group">
@@ -31,19 +33,23 @@
                     id="weight"
                     [(ngModel)]="opponent.weightInLbs"
                     name="weight"
+                    [disabled]="disablePageFlag ? true : null"
                     />
             </div>
             <div class="form-group">
                 <label class="beltRankLabel" for="beltRank">Belt Rank</label>
-                <select [(ngModel)]="opponent.beltRank" name="beltRank">
+                <select [(ngModel)]="opponent.beltRank" name="beltRank"                     
+                        [disabled]="disablePageFlag ? true : null">
                     <option *ngFor="let beltRank of beltRanks" 
                             [value]="beltRank"> {{beltRankToLabelMapping[beltRank]}} </option>
                 </select>
             </div>
 
             <div class="button-box">
-                <button (click)="updateOpponent()" type="button" class="btn btn-primary">Update Opponent</button>
-                <button type="button" class="btn btn-danger">Delete Opponent</button>
+                <button [disabled]="disablePageFlag ? true : null"
+                    (click)="updateOpponent()" type="button" class="btn btn-primary">Update Opponent</button>
+                <button [disabled]="disablePageFlag ? true : null"
+                    (click)="deleteOpponent()" type="button" class="btn btn-danger">Delete Opponent</button>
             </div>
         </form>
     </div>
