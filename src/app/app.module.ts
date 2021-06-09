@@ -9,7 +9,7 @@ import { OpponentsListComponent } from './opponents/opponents-list/opponents-lis
 import { AppRoutingModule } from './app-routing.module';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { MatchesScreenComponent } from './matches-screen/matches-screen.component';
+import { MatchesListComponent } from './matches/matches-list/matches-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -26,7 +26,7 @@ import { OpponentNewComponent } from './opponents/opponent-new/opponent-new.comp
     OpponentNewComponent,
     HomeScreenComponent,
     SideNavComponent,
-    MatchesScreenComponent,
+    MatchesListComponent,
     LoginComponent,
     RegisterComponent,
     ModalComponent
