@@ -2,9 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BeltRankEnum, BeltRankToLabelMapping, LabelToBeltRankMapping, Opponent } from '../opponent.model';
 import { OpponentService } from '../opponent.service';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { from } from 'rxjs';
-import { error } from '@angular/compiler/src/util';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { ModalConfig } from 'src/app/modal/modal.config';
 
@@ -37,7 +34,7 @@ export class OpponentDetailsComponent implements OnInit {
         this.modalConfig.closeButtonLabel = "Close"
     }
 
-    public async updateOpponent() :Promise<void>{   
+    public async updateOpponent() : Promise<void>{   
         var updatedOpponent = this.opponent
         await this.opponentService.updateOpponent(this.opponent.id, updatedOpponent).subscribe(data => 
             {

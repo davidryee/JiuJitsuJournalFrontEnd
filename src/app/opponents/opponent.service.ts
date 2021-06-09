@@ -15,6 +15,10 @@ export class OpponentService {
     {
     }
 
+    public createOpponent(opponentRequest: Opponent) : Observable<Opponent> {
+        return this.httpClient.post<Opponent>(this.env.getUrl() + `opponents`, opponentRequest);
+    }
+
     public retrieveOpponents(): Observable<Opponent[]> {
         return this.httpClient.get<Opponent[]>(this.env.getUrl() + `opponents`);
     }
@@ -28,7 +32,6 @@ export class OpponentService {
     }
 
     public updateOpponent(id, payload) : Observable<Opponent> {
-        console.log("in update oponent")
         return this.httpClient.put<Opponent>(this.env.getUrl() + `opponents/${id}`, payload)
     }
 }

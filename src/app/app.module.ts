@@ -16,12 +16,14 @@ import { RegisterComponent } from './register/register.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { OpponentDetailsComponent } from './opponents/opponent-details/opponent-details.component';
 import { ModalComponent } from './modal/modal.component';
+import { OpponentNewComponent } from './opponents/opponent-new/opponent-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpponentsListComponent,
     OpponentDetailsComponent,
+    OpponentNewComponent,
     HomeScreenComponent,
     SideNavComponent,
     MatchesScreenComponent,

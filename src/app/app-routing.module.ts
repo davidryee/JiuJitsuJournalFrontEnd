@@ -6,10 +6,12 @@ import { MatchesScreenComponent } from './matches-screen/matches-screen.componen
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { OpponentDetailsComponent } from './opponents/opponent-details/opponent-details.component';
+import { OpponentNewComponent } from './opponents/opponent-new/opponent-new.component';
 
 const routes: Routes = [
   {path: 'opponents', component: OpponentsListComponent},
   {path: 'opponents/:id', component: OpponentDetailsComponent},
+  {path: 'createOpponent', component: OpponentNewComponent},
   {path: 'matches', component: MatchesScreenComponent},
   {path: '', component: HomeScreenComponent},
   { path: 'login', component: LoginComponent },
