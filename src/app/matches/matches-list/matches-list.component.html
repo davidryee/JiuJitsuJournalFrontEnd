@@ -1,0 +1,23 @@
+<body>
+    <app-side-nav></app-side-nav>
+    <div class="main">
+        <h2>Matches</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let match of matches">
+                    <td> <a routerLink="/matches/{{match.id}}">{{ match.matchDate | date}}</a> </td>
+                    <td>{{ match.opponent.name }}</td>
+                    <td>{{ match.description }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>>
+

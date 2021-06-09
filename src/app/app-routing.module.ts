@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OpponentsListComponent } from './opponents/opponents-list/opponents-list.component';
 import {HomeScreenComponent} from './home-screen/home-screen.component';
-import { MatchesListComponent } from './matches-list/matches-list.component';
+import { MatchesListComponent } from './matches/matches-list/matches-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { OpponentDetailsComponent } from './opponents/opponent-details/opponent-details.component';
