@@ -29,4 +29,8 @@ export class MatchService {
     public updateMatch(id, payload) : Observable<Match> {
         return this.httpClient.put<Match>(this.env.getUrl() + `matches/${id}`, payload)
     }
+
+    public createMatch(payload) : Observable<Match> {
+        return this.httpClient.post<Match>(this.env.getUrl() + `matches`, payload)
+    }
 }

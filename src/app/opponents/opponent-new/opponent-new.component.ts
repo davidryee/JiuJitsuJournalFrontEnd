@@ -54,6 +54,6 @@ export class OpponentNewComponent implements OnInit {
 
     async openModal() {
         return await this.modalComponent.open()
-      }
+    }
 
 }
