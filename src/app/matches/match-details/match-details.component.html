@@ -1,0 +1,50 @@
+<body>
+    <app-side-nav></app-side-nav>
+    <div class="main">
+        <h2>Match</h2>
+        <form>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="date"
+                    [(ngModel)]="match.matchDate"
+                    name="date"
+                    [disabled]="disablePageFlag ? true : null"
+                    />
+            </div>
+            <div class="form-group">
+                <label for="opponent-name">Opponent Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="opponent-name"
+                    [(ngModel)]="match.opponent.name"
+                    name="opponent-name"
+                    [disabled]=true
+                    />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    [(ngModel)]="match.description"
+                    name="description"
+                    [disabled]="disablePageFlag ? true : null"
+                    />
+            </div>
+            
+            <div class="button-box">
+                <button [disabled]="disablePageFlag ? true : null"
+                    (click)="updateMatch()" type="button" class="btn btn-primary">Update Opponent</button>
+                <button [disabled]="disablePageFlag ? true : null"
+                    (click)="deleteMatch()" type="button" class="btn btn-danger">Delete Opponent</button>
+            </div>
+        </form>
+    </div>
+    <modal #modal [modalConfig]="modalConfig">
+    </modal>
+</body>
