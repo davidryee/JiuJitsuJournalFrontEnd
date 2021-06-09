@@ -1,0 +1,47 @@
+<body>
+    <app-side-nav></app-side-nav>
+    <div class="main">
+        <h2>Opponent</h2>
+        <form>
+            <div class="form-group">
+                <label for="matchDate">Date</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="matchDate"
+                    [(ngModel)]="matchRequest.matchDate"
+                    name="matchDate"
+                    [disabled]="disablePageFlag ? true : null"
+                    />
+            </div>
+             <div class="form-group">
+                <label class="opponentNameLabel" for="opponent-name">Opponent Name</label>
+                <select [(ngModel)]="matchRequest.opponentId" name="opponentId"
+                        [disabled]="disablePageFlag ? true : null">
+                    <option *ngFor="let opponent of opponents"
+                            [value]="opponent.id">{{opponent.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    [(ngModel)]="matchRequest.description"
+                    name="weight"
+                    [disabled]="disablePageFlag ? true : null"
+                    />
+            </div>
+            
+            
+            <div class="button-box">
+                <button [disabled]="disablePageFlag ? true : null"
+                    (click)="createMatch()" type="button" class="btn btn-success">Create Opponent</button>
+                </div>
+            
+        </form>
+    </div>
+    <modal #modal [modalConfig]="modalConfig">
+    </modal>
+</body>

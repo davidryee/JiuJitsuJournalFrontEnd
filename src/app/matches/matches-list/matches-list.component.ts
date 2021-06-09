@@ -17,6 +17,10 @@ export class MatchesListComponent implements OnInit {
     this.getMatches()
   }
 
+  public navigateToCreateNewMatch() : void {
+    this.router.navigate(['/createMatch'])
+  }
+
   private async getMatches() : Promise<void> {
     await this.matchService.retrieveMatches().subscribe((results) => {
       this.matches = results

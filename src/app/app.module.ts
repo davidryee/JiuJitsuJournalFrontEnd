@@ -18,6 +18,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { OpponentDetailsComponent } from './opponents/opponent-details/opponent-details.component';
 import { ModalComponent } from './modal/modal.component';
 import { OpponentNewComponent } from './opponents/opponent-new/opponent-new.component';
+import { MatchNewComponent } from './matches/match-new/match-new.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { OpponentNewComponent } from './opponents/opponent-new/opponent-new.comp
     SideNavComponent,
     MatchDetailsComponent,
     MatchesListComponent,
+    MatchNewComponent,
     LoginComponent,
     RegisterComponent,
     ModalComponent

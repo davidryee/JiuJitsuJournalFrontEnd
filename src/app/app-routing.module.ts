@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { OpponentDetailsComponent } from './opponents/opponent-details/opponent-details.component';
 import { OpponentNewComponent } from './opponents/opponent-new/opponent-new.component';
+import { MatchNewComponent } from './matches/match-new/match-new.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'createOpponent', component: OpponentNewComponent},
   {path: 'matches', component: MatchesListComponent},
   {path: 'matches/:id', component: MatchDetailsComponent},
+  {path: 'createMatch', component: MatchNewComponent},
   {path: '', component: HomeScreenComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }
